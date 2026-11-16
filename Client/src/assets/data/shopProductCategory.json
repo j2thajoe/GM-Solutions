@@ -1,0 +1,57 @@
+[
+  {
+    "title": "Electronics",
+    "src": "/images/category/01.jpg",
+    "alt": "Electronics"
+  },
+  {
+    "title": "Phones & Accessories",
+    "src": "/images/category/12.jpg",
+    "alt": "Phones & Accesssories"
+  },
+  {
+    "title": "Computers & Laptops",
+    "src": "/images/category/06.jpg",
+    "alt": "Laptops & Accesssories"
+  },
+  {
+    "title": "Electricals & Power Solutions",
+    "src": "/images/category/09.jpeg",
+    "alt": "Electricals & Power Solutions"
+  },
+  {
+    "title": "Networking",
+    "src": "/images/category/16.jpeg",
+    "alt": "Networking"
+  },
+  {
+    "title": "eWaste",
+    "src": "/images/category/05.jpg",
+    "alt": "eWaste Equipment"
+  },
+  {
+    "title": "SmartHome & Security",
+    "src": "/images/category/06.jpg",
+    "alt": "SmartHome & Security"
+  },
+  {
+    "title": "Office & Stationary Supplies",
+    "src": "/images/category/06.jpg",
+    "alt": "Office & Stationary Supplies"
+  },
+  {
+    "title": "Lifestyle & Fashion",
+    "src": "/images/category/06.jpg",
+    "alt": "Lifestyle & Fashion"
+  },
+  {
+    "title": "Home & Kitchen Appliances",
+    "src": "/images/category/06.jpg",
+    "alt": "Home & Kitchen Appliances"
+  },
+  {
+    "title": "Medical & Health Equipment",
+    "src": "/images/category/06.jpg",
+    "alt": "Medical & Health Equipment"
+  }
+]

@@ -1,0 +1,366 @@
+/* src/assets/css/studyAdmin.css */
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f3f4f6; /* Light background for the whole page */
+}
+
+/*
+.lecture-admin-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 90%;
+  margin: 3rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.lecture-admin-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1rem;
+  max-width: 500px;
+  width: 90%;
+  margin: 3rem auto;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lecture-admin-form h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+  color: #333;
+  text-align: center;
+}
+
+.lecture-admin-form input {
+  width: 60%;
+  padding: 0.6rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ccc;
+  text-align: center;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.lecture-admin-form input:focus {
+  outline: none;
+  border-color: #3b82f6;
+}
+
+.lecture-admin-form input[placeholder="Description"] {
+  height: 60px;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
+  resize: vertical;
+  text-align: left;
+}
+
+.lecture-admin-form button {
+  width: 60%;
+  padding: 0.7rem;
+  background-color: #3b82f6;
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.lecture-admin-form button:hover {
+  background-color: #2563eb;
+}
+
+.lecture-admin-form button:disabled {
+  background-color: #9ca3af;
+  cursor: not-allowed;
+}
+.lecture-items {
+  list-style: none;
+  padding: 0;
+  margin-top: 10px;
+}
+.lecture-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 8px 0;
+}
+
+.delete-button {
+  margin-top: 15px;
+  background: rgb(211, 35, 4);
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+.delete-button:hover {
+  background: rgb(189, 5, 5);
+}
+
+*/
+
+:root {
+  --gradient-opacity-start: 0.45; /* bottom opacity */
+  --gradient-opacity-end: 0; /* top opacity */
+}
+
+.lecture-admin-form {
+  position: relative;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  background: rgba(255, 255, 255, 0.95);
+  z-index: 2;
+}
+
+.studyadmin-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+.lecture-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  max-width: 1350px;
+  margin: 0 auto;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.lecture-overlay-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1350px; /* two-thirds of footer width */
+  height: auto; /* half of footer height */
+  object-fit: cover;
+  object-position: bottom; /* keeps proportions */
+  opacity: 0.45; /* adjust opacity for subtle design */
+  pointer-events: none; /* prevents blocking links/buttons */
+  z-index: 1; /* stays behind content */
+
+  /* fade upwards from visible (bottom) to transparent (top 50%) */
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: bottom;
+  -webkit-mask-position: bottom;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+}
+
+.lecture-admin-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+}
+
+.form-header1 {
+  color: #0c09ac;
+  font-size: 50px;
+}
+
+.lecture-header1,
+.lecture-header2 {
+  color: #fff;
+  font-size: 40px;
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+/* Inputs */
+.lecture-admin-inputs {
+  width: 60%;
+  margin-bottom: 1.2rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid #ccc;
+  background-color: #fff;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+
+.lecture-admin-inputs:focus,
+.lecture-admin-inputs:hover {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 15px 3px #007bff;
+}
+
+/* Textarea */
+textarea.lecture-admin-inputs {
+  resize: vertical;
+  min-height: 100px;
+  text-align: left;
+}
+
+/* Submit/Delete Buttons */
+.submit-button,
+.delete-button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.8rem;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.submit-button {
+  background-color: #007bff;
+  font-size: 1.3rem;
+}
+
+.submit-button:hover {
+  background-color: #e48416;
+  box-shadow: 0 0 20px 5px rgba(245, 173, 41, 0.6);
+}
+
+.delete-button {
+  background-color: #e04848;
+}
+
+.delete-button:hover {
+  background-color: #da5543;
+  box-shadow: 0 0 20px 5px rgba(197, 61, 61, 0.6);
+}
+
+.submit-button:hover,
+.delete-button:hover {
+  font-size: 1.5rem;
+  font-weight: 700;
+  transform: scale(1.15);
+  border-radius: 40px;
+}
+
+/* Lecture List Section */
+.lecture-admin-container {
+  margin: 2rem auto;
+  padding: 1.5rem;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.9);
+  max-width: 700px;
+  width: 95%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lecture-list h3 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.lecture-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.lecture-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding: 0.8rem 0;
+  font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (min-width: 1028px) {
+  .lecture-admin-form {
+    width: 50%;
+  }
+  .lecture-admin-inputs {
+    width: 60%;
+  }
+  .submit-button {
+    width: 30%;
+    font-size: 1.4rem;
+  }
+  .submit-button:hover {
+    width: 34%;
+    font-size: 1.7rem;
+  }
+}
+
+@media (min-width: 568px) and (max-width: 1027px) {
+  .lecture-admin-form {
+    width: 80%;
+  }
+  .lecture-admin-inputs {
+    width: 70%;
+  }
+  .submit-button {
+    width: 60%;
+    font-size: 1.3rem;
+  }
+  .submit-button:hover {
+    font-size: 1.5rem;
+  }
+  .lecture-overlay-image {
+    width: 100%;
+    height: 100%;
+    opacity: 0.45;
+  }
+}
+
+@media (max-width: 567px) {
+  .lecture-admin-form {
+    width: 85%;
+  }
+
+  .form-header1 {
+    font-size: 35px;
+  }
+
+  .lecture-admin-inputs {
+    width: 80%;
+  }
+  .submit-button {
+    width: 70%;
+    font-size: 1.2rem;
+  }
+  .submit-button:hover {
+    font-size: 1.4rem;
+  }
+  .lecture-overlay-image {
+    width: 100%;
+    height: 100%;
+    opacity: 0.45;
+  }
+}

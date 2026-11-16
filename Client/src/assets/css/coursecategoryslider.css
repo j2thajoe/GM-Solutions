@@ -1,0 +1,31 @@
+/* coursecategoryslider.css */
+
+/* Use base slider styling from productcategoryslider.css */
+
+.course-slider .slider-title {
+  color: #0a2972;
+  font-weight: 700;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  padding: 0.25rem 0.75rem;
+}
+
+.course-slider .slider-image {
+  border: 3px solid #0a2972;
+}
+
+.course-slider .slider-overlay {
+  background: linear-gradient(
+    to top,
+    rgba(10, 41, 114, 0.5),
+    rgba(0, 0, 0, 0.1)
+  );
+}
+
+.course-slider .slider-image-container:hover .slider-image {
+  transform: scale(1.07);
+}
+
+.course-slider .slider-arrow {
+  color: #0a2972;
+}

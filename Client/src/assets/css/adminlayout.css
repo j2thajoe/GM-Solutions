@@ -1,0 +1,440 @@
+/* adminLayout.css
+   Single CSS file for AdminLayout, Sidebar, Topbar and RightSidebar
+   Replace Tailwind classnames with the class names used below.
+*/
+:root {
+  --sidebar-width: 260px;
+  --topbar-height: 64px;
+  --navbar-height: 128px;
+  --accent: #6366f1; /* indigo-ish */
+  --font-accent: #0f397e;
+  --muted: #6b7280;
+  --bg: #f1ceac;
+  --navbar-bg: #fad7c2;
+  --topbar-bg: #ffffff;
+  --sidebar-bg: #ffffff;
+  --hamburger-color: #ff6600;
+}
+
+/* ------------------------- */
+/* TOP BAR HOLDER             */
+/* ------------------------- */
+
+.top-navbar {
+  position: relative;
+  width: 100%;
+  height: var(--navbar-height);
+  background: var(--navbarbg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  top: 0;
+  z-index: 1000;
+}
+
+/* ======================================= */
+/* ADMIN LAYOUT (ALL COMPONENTS ANIMATED)  */
+/* ======================================= */
+
+.admin-layout {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ================================ */
+/* TOPBAR                    */
+/* ================================ */
+
+/* TOPBAR MAIN WRAPPER */
+
+.topbar-inner {
+  height: 64px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 20px;
+  border-bottom: 1px solid #e5e5e5;
+  position: sticky;
+  top: 0;
+}
+
+/* LEFT SECTION (MENU + SEARCH) */
+
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+/* Hamburger button */
+
+.hamburger {
+  background: none;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #333;
+  transition: 0.2s ease;
+}
+
+.hamburger:hover {
+  transform: scale(1.4);
+  color: var(--hamburger-color);
+  background: none;
+}
+
+/* SEARCH BAR */
+
+.topbar-search {
+  position: relative;
+}
+
+.search-input {
+  width: 500px;
+  padding: 8px 14px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.25s ease;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  width: 540px;
+  border-color: #ff6600;
+  box-shadow: 0 0 5px rgba(255, 102, 0, 0.3);
+}
+
+/* RIGHT SECTION (ICONS + PROFILE) */
+
+.topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Notification Button */
+.icon-btn {
+  position: relative;
+  border: black;
+  background: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px;
+  transition: 0.2s ease;
+}
+
+.icon-btn:hover svg {
+  stroke: #ff6600;
+  transform: scale(1.4);
+  transition: transform 0.2s ease-in-out;
+}
+
+/* Notification Badge */
+
+.badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: #ff0000;
+  color: white;
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 50%;
+  font-weight: 600;
+}
+
+/* PROFILE SECTION */
+
+.profile-area {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.profile-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ff6600;
+  transition: 0.2s ease;
+}
+
+.profile-img:hover {
+  transform: scale(1.05);
+}
+
+.admin-topbar {
+  position: relative;
+  margin-bottom: 18px;
+  width: 80%;
+  height: var(--topbar-height);
+  background: var(--topbar-bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 0 24px;
+  top: 0;
+}
+
+.topbar {
+  height: 60px;
+  background: var(--bg);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 18px;
+  position: sticky;
+  top: 0;
+  transform: translateY(-100%);
+  animation: topbarSlideDown 0.4s ease forwards;
+}
+
+@keyframes topbarSlideDown {
+  to {
+    transform: translateY(0);
+  }
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 6px;
+}
+
+/* ------------------------- */
+/* BODY WRAPPER              */
+/* ------------------------- */
+
+.admin-body {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 0);
+  overflow: hidden;
+}
+
+/* ------------------------- */
+/* LEFT SIDEBAR              */
+/* ------------------------- */
+
+.left-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  position: fixed;
+  left: 0;
+  transform: translateX(-100%);
+  transition: transform 0.35s ease-in-out;
+  z-index: 2000;
+}
+
+.left-sidebar.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  transform: translateX(0);
+}
+
+.sidebar-header {
+  padding: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.sidebar-links a {
+  display: flex;
+  gap: 10px;
+  padding: 14px 20px;
+  text-decoration: none;
+  color: #333;
+  transition: 0.2s;
+}
+
+.sidebar-links a:hover {
+  background: #eaeaea;
+}
+
+/* ------------------------- */
+/* MAIN CONTENT              */
+/* ------------------------- */
+
+.admin-main {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  background: #f5f7fa;
+  animation: fadeIn 0.5s ease;
+}
+
+.main-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+  background: #ffffff;
+  gap: 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.content-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 50px);
+  overflow-y: auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ------------------------- */
+/* RIGHT SIDEBAR             */
+/* ------------------------- */
+
+.right-sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: var(--sidebar-width);
+  background: var(--sidebar-bg);
+  box-shadow: -2px 0 8px rgba(0, 0, 0, 0.1);
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 60px;
+  transform: translateX(100%);
+  transition: transform 0.35s ease;
+  z-index: 2000;
+}
+
+.right-sidebar.open {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(0);
+}
+
+.right-sidebar-content {
+  padding: 20px;
+}
+
+/* ------------------------- */
+/* SIDEBAR CONTENT          */
+/* ------------------------- */
+
+.admin-sidebar-brand {
+  padding: 20px;
+  font-weight: bold;
+  font-size: 18px;
+}
+.brand-icon {
+  font-size: 24px;
+  color: var(--accent);
+}
+.brand-title {
+  margin-left: 8px;
+  font-size: 30px;
+  font-weight: 600;
+  color: var(--font-accent);
+}
+.collapse-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 18px;
+  color: var(--muted);
+  transition: 0.2s ease;
+}
+.icon :hover {
+  color: var(--hamburger-color);
+  transform: scale(1.4);
+}
+.nav-link {
+  display: flex;
+  align-items: center;
+  padding: 12px 30px;
+  gap: 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 22px;
+  font-weight: 800;
+
+  transition: 0.2s ease-in-out;
+}
+.nav-link:hover {
+  color: var(--hamburger-color);
+  font-size: 30px;
+  padding: 12px 24px;
+}
+
+/* ------------------------- */
+/* RESPONSIVENESS            */
+/* ------------------------- */
+
+@media (max-width: 900px) {
+  .top-navbar {
+    height: 96px;
+  }
+  .main-area {
+    width: 100%;
+  }
+  .left-sidebar {
+    width: 220px;
+  }
+  .search-input {
+    width: 180px;
+  }
+  .search-input:focus {
+    width: 220px;
+  }
+}
+
+@media (max-width: 700px) {
+  .top-navbar {
+    height: 96px;
+  }
+  .main-area {
+    width: 100%;
+  }
+  .right-sidebar {
+    width: 260px;
+  }
+  .search-input {
+    width: 140px;
+  }
+  .search-input:focus {
+    width: 180px;
+  }
+}

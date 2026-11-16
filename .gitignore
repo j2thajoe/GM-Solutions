@@ -1,0 +1,26 @@
+node_modules
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.svg
+*.ico
+*.mp4
+*.webm
+*.pdf
+Oracle_JDK-23/
+serviceAccountKey.json
+log.txt
+#ide
+.idea/
+settings/
+*.iml
+# Mpesa configuration
+mpesaConfig.json
+package-lock.json
+.env
+firebase-debug.log
+firebase.js
+# Configuration files
+config.js
+*.log

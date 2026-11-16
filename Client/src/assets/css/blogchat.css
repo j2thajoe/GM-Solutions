@@ -1,0 +1,136 @@
+/* BlogChat.css */
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+}
+
+.chat-container {
+  max-width: 800px;
+  margin: auto;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.chat-header {
+  background-color: #007bff;
+  color: white;
+  font-size: 1.8rem;
+  padding: 1rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chat-form {
+  display: flex;
+  padding: 1rem;
+  border-bottom: 1px solid #ddd;
+  background-color: #f9f9f9;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 20px;
+  outline: none;
+  margin-right: 0.5rem;
+}
+
+.chat-submit {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.chat-submit:hover {
+  background-color: #0056b3;
+}
+
+.chat-entries {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.chat-entry {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  background-color: #f1f1f1;
+}
+
+.chat-name {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #333;
+}
+
+.chat-message {
+  display: block;
+  font-size: 1rem;
+  color: #555;
+}
+
+.chat-timestamp {
+  display: block;
+  font-size: 0.8rem;
+  color: #999;
+  margin-top: 0.5rem;
+  text-align: right;
+}
+
+.chat-footer {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  background-color: #fafafa;
+  display: flex;
+  justify-content: center;
+}
+
+.footer-input {
+  width: 90%;
+  padding: 0.6rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #007bff;
+  border-radius: 20px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.footer-input:focus {
+  border-color: #0056b3;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .chat-header {
+    font-size: 1.4rem;
+  }
+
+  .chat-input,
+  .footer-input {
+    font-size: 0.9rem;
+  }
+
+  .chat-submit {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .chat-entry {
+    padding: 0.75rem;
+  }
+}

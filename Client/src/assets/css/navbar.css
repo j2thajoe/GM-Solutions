@@ -1,0 +1,654 @@
+body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+.header-section {
+  position: relative;
+  width: 100%;
+  background-color: #ffffff;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out;
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* When header is fixed after scroll */
+.header-fixed {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional, for better visibility */
+  z-index: 9999; /* Make sure it's above other content */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Add some space below the fixed header */
+.min-vh-100 {
+  padding-top: 140px; /* Adjust this height if your navbar is taller/shorter */
+}
+
+/* Fade-in effect for the navbar */
+.fadeInUp {
+  animation: fadeInUp 0.5s ease-out;
+}
+.GMBusinessLogo {
+  width: 70px;
+  height: auto;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.GMBusinessLogo:hover {
+  transform: scale(1.2);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.menu-area {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Additional styles for navbar items */
+.header-bottom {
+  padding: 0;
+}
+
+.navbar-item {
+  position: relative;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 1.1rem;
+}
+
+.navbar-item:hover {
+  transform: scale(1.2);
+}
+.navbar-item a {
+  display: block;
+  color: white;
+  font-weight: 600;
+  padding: 1rem 1.2rem;
+  border-bottom: 2px solid transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* When hovering anywhere inside the navbar-item (including the arrow),
+   style the link to show underline and color change. This fixes the issue
+   where hovering the arrow didn't style the active menu. */
+.navbar-item:hover .navbar-item-text,
+.navbar-item:hover .navbar-item a,
+.navbar-item:hover a {
+  background-color: transparent !important;
+  font-size: 1.1rem;
+}
+
+.navbar-item-text,
+.navbar-item a {
+  text-decoration: none !important;
+  transition: all 0.4s ease-in-out;
+}
+
+.navbar-item-text:hover {
+  color: #e44e09;
+  font-size: 1.2rem;
+}
+
+/* Remove default blue focus/active background on links and remove tap highlight on mobile */
+.navbar-item a:focus,
+.navbar-item a:active,
+.navbar-item a:visited,
+.navbar-item a {
+  -webkit-tap-highlight-color: transparent;
+  outline: none;
+  background: transparent;
+  text-decoration: none;
+}
+
+.arrow {
+  margin-left: 3px;
+  padding: 4px;
+  font-size: 16px;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+
+.arrow:hover {
+  margin-left: 6px;
+  color: #d6560c;
+  font-size: 18px;
+}
+
+.arrow.active {
+  transform: rotate(90deg);
+  color: #d6560c;
+}
+
+.arrow.active + .dropdown-list {
+  display: block;
+}
+
+.navbar-item:hover .arrow {
+  color: #d6560c;
+  /* transform: rotate(90deg); */
+}
+/*.navbar-item:hover .dropdown-list {
+  display: block;
+  
+}
+  */
+.navbar-item:hover .dropdown-list > .dropdown-list {
+  display: block;
+}
+
+/* Styling for the first dropdown list */
+.dropdown-list {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  padding: 0.5rem 0;
+  z-index: 9999;
+  min-width: 240px;
+  border-radius: 0.5rem;
+  overflow: hidden;
+}
+
+.dropdown-item {
+  padding: 10px 16px;
+  margin: 0;
+  white-space: nowrap;
+  color: #333;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.dropdown-item:hover {
+  background-color: #f0f0f0;
+  color: #005531;
+  transform: scale(1.03);
+  font-weight: bold;
+  font-size: 0.75rem;
+}
+
+.navbar-item:hover .dropdown-list {
+  /*display: block;*/
+  font-weight: bold;
+}
+
+.dropdown-list.active:hover {
+  font-size: 2rem;
+  text-decoration-color: #d6560c;
+  text-decoration: underline;
+}
+
+
+.header-bar {
+  display: none;
+  cursor: pointer;
+}
+
+.header-bar span {
+  display: block;
+  width: 20px;
+  height: 3px;
+  background-color: #333;
+  margin: 2px auto;
+}
+
+.menu-toggle-btn {
+  display: none;
+  cursor: pointer;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: none;
+  border: none;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.menu-toggle-btn {
+  /* default color for the icon (and any inner spans) */
+  color: #000000; /* black */
+}
+
+.menu-toggle-btn svg {
+  /* ensure the SVG stroke uses currentColor (SVG in JSX uses stroke="currentColor") */
+  color: inherit;
+}
+
+.menu-toggle-btn span {
+  display: block;
+  height: 3px;
+  background-color: currentColor; /* follow .menu-toggle-btn color */
+  border-radius: 2px;
+  transition: all 0.15s ease-in-out;
+}
+
+/* Hover and focus states */
+.menu-toggle-btn:hover,
+.menu-toggle-btn:focus {
+  color: #d6560c; /* orange on hover */
+  background: transparent; /* prevent default blue background on some browsers */
+  outline: none;
+}
+
+/* Remove mobile tap highlight and focus background */
+.menu-toggle-btn,
+.menu-toggle-btn span,
+.menu-toggle-btn svg {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Accessibility: subtle focus-visible ring for keyboard users */
+.menu-toggle-btn:focus-visible {
+  box-shadow: 0 0 0 3px rgba(214, 86, 12, 0.12);
+  border-radius: 6px;
+}
+.profile-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  pointer-events: auto;
+  z-index: 50;
+}
+
+.profile-dropdown img:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+}
+
+.profile-image {
+  width: 60px;
+  height: auto;
+  cursor: pointer;
+  border: 2px solid #e44e09;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.2);
+}
+
+.menu-area .dropdown {
+  position: relative;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 50px;
+  right: 0;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 16px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  width: 130px;
+  z-index: 10;
+  display: none;
+}
+
+.dropdown-item {
+  padding: 10px;
+  text-align: left;
+}
+
+.dropdown-item:hover {
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+.dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.dropdown.open .dropdown-menu {
+  display: block;
+}
+
+.dropdown-toggle:focus {
+  outline: none;
+}
+
+.dropdown-menu li {
+  padding: 10px;
+  text-align: left;
+}
+
+.dropdown-menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.logout-btn {
+  background-color: rgb(153, 11, 11);
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 10px;
+  width: 70%;
+  text-align: center;
+  cursor: pointer;
+}
+.logout-btn:hover {
+  background-color: #cf0f0f;
+  border-radius: 14%;
+}
+
+/* Media query for mobile menu toggler */
+@media (max-width: 1028px) {
+  .header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .header-section {
+    z-index: 9999;
+  }
+  .menu-toggle-btn {
+    display: flex;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    top: var(--header-height, 72px);
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height, 72px));
+    background: white;
+    position: fixed;
+    padding: 10px 0;
+    border-top: 2px solid #f4c20d;
+    z-index: 999;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .menu.flex {
+    display: flex !important;
+  }
+
+  .menu-backdrop {
+    position: fixed;
+    top: var(--header-height, 72px);
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 998;
+  }
+
+  .header-bar {
+    display: block;
+    cursor: pointer;
+  }
+
+  .header-bar span {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #333;
+    margin: 2px auto;
+  }
+  .menu ul {
+    flex-direction: column;
+    background-color: #005531;
+    padding: 10px 0;
+  }
+
+  .navbar-item a {
+    color: #ffffff;
+    font-weight: bold;
+    padding: 0.8rem 1.2rem;
+    font-size: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  }
+
+  /* Hover/tap color */
+  /* ACTIVE NAV ITEM (clicked) */
+  .navbar-item a:hover,
+  .navbar-item.active .navbar-item-text,
+  .navbar-item.active > a {
+    color: #f4c20d;
+    font-size: 1.2rem;
+    font-weight: 700;
+  }
+
+  /* Keep arrow rotated when active */
+  .navbar-item.active .arrow {
+    transform: rotate(90deg);
+    color: #d6560c;
+  }
+
+  /* Keep dropdown visible when active */
+  .navbar-item.active > .dropdown-list {
+    display: block !important;
+  }
+
+  .navbar-item {
+    padding: 1rem;
+    flex-direction: column;
+    border-bottom: 1px solid #eee;
+  }
+
+  .navbar-item:hover {
+    font-size: 1.4rem;
+    color: #d0d319;
+  }
+  .navbar-item:hover > ul.dropdown-list {
+    display: block;
+  }
+  .navbar-item:hover .dropdown-list > .dropdown-list {
+    display: block;
+  }
+
+  .dropdown-list {
+    position: static !important; /* Prevent absolute positioning */
+    display: none !important; /* Always visible on hover/tap */
+    right: 0;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    padding: 10px 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.8rem;
+  }
+
+  .dropdown-profile-list {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    padding: 10px;
+    border: 2px solid red;
+    border-radius: 8px;
+    z-index: 1000;
+  }
+
+  .dropdown-profile-list a,
+  .dropdown-profile-list button {
+    display: block;
+    width: 100%;
+    padding: 10px 14px;
+    text-align: left;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 0.95rem;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s ease;
+  }
+
+  .dropdown-profile-list a:hover,
+  .dropdown-profile-list button:hover {
+    background-color: #f7f7f7;
+  }
+
+  .dropdown-item {
+    padding: 10px 20px;
+    white-space: normal; /* Prevent text overflow */
+    text-align: left;
+    color: #333;
+    width: 100%;
+  }
+  .dropdown-item a {
+    padding: 10px 20px;
+    display: block;
+    text-decoration: none;
+    color: #333;
+    font-size: 0.9rem;
+  }
+
+  .dropdown-item a:hover {
+    background-color: #f4c20d;
+    color: #005531;
+  }
+
+  .dropdown-item:hover {
+    transform: scale(1.05);
+  }
+
+  .dropdown-list .dropdown-list {
+    position: static;
+    top: auto;
+    left: auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .menu-toggle-btn {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dropdown-list {
+    position: static !important;
+    transform: none !important;
+    box-shadow: none !important;
+    display: block;
+    background: #fff;
+    width: 100%;
+    padding: 0.3rem 0;
+  }
+  .dropdown-item {
+    width: 100%;
+    padding: 12px 18px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+  }
+
+  .dropdown-item a {
+    font-size: 1rem;
+    color: #333;
+  }
+
+  .dropdown-item:hover a {
+    color: #d6560c;
+    font-size: 1.1rem;
+  }
+
+  .profile-dropdown span {
+    cursor: pointer;
+    pointer-events: auto;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu ul {
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 200px;
+    display: none; /* hidden by default */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    z-index: 9999;
+  }
+
+  .menu ul.flex {
+    display: flex !important; /* show menu when toggled */
+  }
+
+  .navbar-item a {
+    color: #000 !important;
+    padding: 12px 16px;
+    text-align: left;
+  }
+}

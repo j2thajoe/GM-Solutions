@@ -1,0 +1,8 @@
+.slider-image-container {
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.slider-image-container:hover {
+  transform: scale(1.05);
+}

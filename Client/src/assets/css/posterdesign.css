@@ -1,0 +1,374 @@
+.poster-design-container {
+  position: relative;
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0;
+  overflow: hidden;
+  min-height: 100vh;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+.poster-design-overlay-image {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 2000px;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.55;
+  pointer-events: none;
+  z-index: 1;
+
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.3) 40%,
+    rgba(0, 0, 0, 0.1) 100%
+  );
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: bottom;
+  -webkit-mask-position: bottom;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+}
+
+.PosterDesignHeader {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.header-text {
+  font-size: 3.4rem;
+  color: #032955;
+  font-weight: bold;
+}
+
+.header-subtext {
+  font-size: 2rem;
+  color: #333;
+}
+
+.poster-design-title {
+  background-color: #f3e2e2;
+  border-radius: 24px;
+  padding: 2rem;
+  margin: 2rem auto;
+  width: 50%;
+}
+
+.title-text {
+  font-size: 1.8rem;
+  color: #04203f;
+  margin-bottom: 1rem;
+}
+
+.poster-design-input,
+.poster-image-input {
+  margin-top: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+}
+
+.poster-design-fileinput {
+  font-size: 1rem;
+  color: #333;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #bfcfe2;
+  border-radius: 20px;
+  padding: 50px 40px;
+  margin: 2rem auto;
+  width: 65%;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.content-level-1,
+.content-level-2,
+.content-level-3,
+.content-level-4,
+.content-level-5 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  padding: 25px;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.poster-content-name {
+  display: flex;
+  align-items: start;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #04203f;
+  margin-bottom: 1rem;
+}
+
+.poster-content-options {
+  align-items: flex-start;
+}
+
+.poster-content-options,
+.poster-content-options-2,
+.poster-content-options-3,
+.poster-content-options-4 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.poster-size,
+.poster-paper-type {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.checkbox-complete {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.checkbox {
+  margin-right: 0.5rem;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.phone-intake,
+.email-intake {
+  display: flex;
+  flex-direction: row;
+}
+
+.detail-textarea,
+.contact-textarea {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 18px;
+  border: 1px solid #ccc;
+  resize: none;
+  margin-bottom: 1rem;
+  justify-content: center;
+  align-items: center;
+}
+.detail-textarea {
+  font-size: 1.3rem;
+}
+.contact-textarea {
+  font-size: 1.8rem;
+}
+
+.submit-btn,
+.upload-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background-color: #3f06a8;
+  color: white;
+  padding: 20px 40px;
+  font-size: 1.8rem;
+  border-radius: 40px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.submit-btn:hover,
+.upload-btn:hover {
+  background-color: #c9743c;
+  font-size: 2rem;
+}
+.phone-intake,
+.email-intake {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 1028px) {
+}
+
+@media (min-width: 768px) and (max-width: 1028) {
+  .poster-design-title,
+  .content {
+    width: 80%;
+  }
+
+  .content-level-1,
+  .content-level-2,
+  .content-level-3,
+  .content-level-4,
+  .content-level-5 {
+    width: 100%;
+    padding: 5px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .checkbox-complete {
+    font-size: 1rem;
+  }
+
+  .detail-textarea {
+    width: 100%;
+    margin-bottom: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+  .detail-textarea {
+    font-size: 1.3rem;
+  }
+  .contact-textarea {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .poster-design-title,
+  .content {
+    width: 90%;
+  }
+  .content-level-1,
+  .content-level-2,
+  .content-level-3,
+  .content-level-4,
+  .content-level-5 {
+    width: 100%;
+    padding: 25px;
+    box-shadow: 0 7px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .detail-textarea,
+  .contact-textarea {
+    width: 100%;
+  }
+  .header-text {
+    font-size: 3rem;
+  }
+
+  .header-subtext {
+    font-size: 1.8rem;
+  }
+  .checkbox-complete {
+    font-size: 1.2rem;
+  }
+  .poster-content-name {
+    font-size: 1.8rem;
+  }
+  .phone-intake,
+  .email-intake {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 367px) and (max-width: 568) {
+  .content {
+    width: 90%;
+  }
+
+  .header-text {
+    font-size: 1.4rem;
+  }
+
+  .header-subtext {
+    font-size: 1.1rem;
+  }
+  .checkbox-complete {
+    font-size: 1rem;
+  }
+  .checkbox {
+    margin-right: 0.2rem;
+  }
+  .detail-textarea {
+  }
+
+  .poster-design-title {
+    width: 70%;
+  }
+
+  .title-text {
+    font-size: 0.1rem;
+  }
+  .poster-content-name {
+    font-size: 1.6rem;
+  }
+  .contact-textarea {
+    font-size: 1.4rem !important;
+    width: 90% !important;
+  }
+  .submit-btn,
+  .upload-btn {
+    width: 80%;
+  }
+
+  .submit-btn:hover,
+  .upload-btn:hover {
+    background-color: #c9743c;
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 368px) {
+  .content {
+    width: 95%;
+    padding: 5px 10px;
+  }
+  .header-text {
+    font-size: 1.6rem;
+  }
+
+  .header-subtext {
+    font-size: 1rem;
+  }
+  .contact-textarea {
+    font-size: 1.2rem;
+    width: 90% !important;
+  }
+  .submit-btn,
+  .upload-btn {
+    width: 80% !important;
+    font-size: 1.3rem;
+    padding: 15px 30px;
+  }
+
+  .submit-btn:hover,
+  .upload-btn:hover {
+    background-color: #c9743c;
+    font-size: 1.4rem;
+  }
+}

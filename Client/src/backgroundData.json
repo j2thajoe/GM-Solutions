@@ -1,0 +1,40 @@
+{
+  "Home": {
+    "image1": "/images/pageheader/bg/01.jpg",
+    "image2": "/images/pageheader/bg/02.jpg",
+    "video": "",
+    "embed": "",
+    "audio": ""
+  },
+  "Shop": {
+    "image1": "/images/pageheader/shopping1.jpeg",
+    "image2": "/images/pageheader/shopping2.jpg",
+    "image3": "/images/pageheader/shopping3.jpeg",
+    "image4": "/images/pageheader/shopping4.jpg",
+    "image5": "/images/pageheader/shopping5.jpg",
+    "video": "",
+    "embed": "",
+    "audio": ""
+  },
+  "Services": {
+    "image1": "/images/pageheader/bg/01.jpg",
+    "image2": "/images/pageheader/bg/02.jpg",
+    "video": "",
+    "embed": "",
+    "audio": ""
+  },
+  "Study": {
+    "image1": "/images/pageheader/posterdesign.jpg",
+    "image2": "/images/pageheader/posterdesign2.jpg",
+    "video": "",
+    "embed": "",
+    "audio": ""
+  },
+  "ARTs": {
+    "image1": "/images/pageheader/binding1.jpeg",
+    "image2": "/images/pageheader/binding2.jpeg",
+    "video": "",
+    "embed": "",
+    "audio": ""
+  }
+}

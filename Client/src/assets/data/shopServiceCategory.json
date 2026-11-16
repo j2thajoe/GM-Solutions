@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Print, Bind & laminate",
+    "src": "/images/category/01.jpg",
+    "alt": "Print, Bind & laminate",
+    "link": "/PrintingBinding"
+  },
+  {
+    "title": "Website & Graphic Designs",
+    "src": "/images/category/12.jpg",
+    "alt": "Website & Graphic Designs",
+    "link": "/WebsitenGraphicDesigns"
+  },
+  {
+    "title": "E-Citizen Services",
+    "src": "/images/category/06.jpg",
+    "alt": "E-Citizen Services",
+    "link": "/ECitizenServices"
+  },
+  {
+    "title": "More Solutions",
+    "src": "/images/category/09.jpeg",
+    "alt": "More Solutions",
+    "link": "/Solutions"
+  },
+  {
+    "title": "General Repairs & Maintenance",
+    "src": "/images/category/16.jpeg",
+    "alt": "General Repairs & Maintenance",
+    "link": "/GeneralRepairsandMaintenance"
+  }
+]

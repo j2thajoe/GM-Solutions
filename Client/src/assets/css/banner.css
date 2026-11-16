@@ -1,0 +1,259 @@
+/* Banner Section Styling */
+.banner-section {
+  position: relative;
+  overflow: hidden;
+  height: 85vh;
+}
+
+.search-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 30%;
+  padding: 10px 20px;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Category dropdown */
+.search-form select {
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  padding: 10px;
+  font-family: "Poppins", sans-serif;
+  color: #333;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Input styling */
+.search-form input[type="text"] {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 10px 15px;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+}
+
+/* Button styling */
+.search-form button {
+  border: none;
+  background: #ff6f61;
+  color: white;
+  font-size: 1.2rem;
+  padding: 12px 20px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.search-form button:hover {
+  background: #e85a4f;
+  transform: scale(1.05);
+}
+
+/* Wrapper around input + icon */
+.search-input-wrapper {
+  position: relative;
+  flex: 1;
+}
+
+/* Input styling */
+.search-input-wrapper input[type="text"] {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  padding: 12px 45px 12px 15px;
+  background: transparent;
+  font-family: "Poppins", sans-serif;
+  color: #222;
+  border-radius: 30px;
+  box-sizing: border-box;
+}
+
+/* Icon inside the input */
+.search-input-wrapper .icofont-ui-search {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.3rem;
+  color: #888;
+  pointer-events: none;
+}
+
+/* Styling for the search list */
+.lab-ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  color: white;
+}
+.lab-ul li {
+  margin: 8px 0;
+  font-size: 1rem;
+}
+
+.lab-ul li a {
+  color: #fff;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.lab-ul li a:hover {
+  color: #ff6f61;
+}
+
+/* Set the position of the background images */
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: -1; /* Ensures images are behind the content */
+  overflow: hidden;
+  display: flex;
+}
+
+/* Style for each background image */
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  animation: slideBackground 16s infinite linear;
+  opacity: 0.5;
+  transition: opacity 2s ease-in-out;
+}
+
+/* Keyframes for background animation */
+@keyframes slideBackground {
+  0% {
+    opacity: 0;
+    transform: translateX(0);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  50% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  75% {
+    opacity: 1;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+}
+
+/* Adding animation delays to each image */
+.hero-background .background-image-0 {
+  animation-delay: 0s;
+}
+.hero-background .background-image-1 {
+  animation-delay: 8s;
+}
+.hero-background .background-image-2 {
+  animation-delay: 16s;
+}
+.hero-background .background-image-3 {
+  animation-delay: 24s;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  padding: 60px 15px;
+  color: white;
+  text-align: center;
+  max-width: 100%;
+}
+
+/* Text inside the hero section */
+.hero-text {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2; /* Make sure the text appears on top */
+}
+
+.hero-text h1 {
+  font-size: 4.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Styling for the title and description */
+.hero-text h2 {
+  font-size: 2.5em;
+  font-weight: bold;
+}
+
+.hero-text h4 {
+  font-size: 1.5em;
+  margin-top: 20px;
+}
+
+/* Search input and form styling */
+input[type="text"] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+button[type="submit"] {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .search-form {
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 15px;
+  }
+
+  .search-form button {
+    width: 100%;
+    border-radius: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-text h1 {
+    font-size: 2rem;
+  }
+  .hero-text h2 {
+    font-size: 1.2rem;
+  }
+}

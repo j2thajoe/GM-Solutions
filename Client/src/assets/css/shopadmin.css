@@ -1,0 +1,257 @@
+:root {
+  --gradient-opacity-start: 0.45; /* bottom opacity */
+  --gradient-opacity-end: 0; /* top opacity */
+  --form-bg-default: rgba(0, 0, 0, 0.45);
+  --form-bg-active: rgba(0, 123, 255, 0.55);
+}
+
+{/*
+
+.shop-admin-form {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: all 0.3s ease-in-out;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(0, 0, 0, var(--gradient-opacity-start)),
+      rgba(0, 0, 0, var(--gradient-opacity-end)) 80%
+    ),
+    url("../../../public/images/background/Admin/brownleaves.jpg");
+
+  background-position: bottom center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  color: #fff;
+  position: relative;
+}
+
+*/}
+
+.shop-admin-form {
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  /* SIZE */
+  width: 80%;
+  max-width: 1100px;
+
+  padding: 3rem;
+  border-radius: 20px;
+
+  /* BACKGROUND */
+  background:
+    linear-gradient(
+      to top,
+      var(--form-bg-default),
+      rgba(0, 0, 0, 0) 80%
+    ),
+    url("../../../public/images/background/Admin/brownleaves.jpg");
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  color: #fff;
+
+  /* SMOOTH TRANSITIONS */
+  transition:
+    background 0.4s ease,
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.shop-admin-form:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+
+   background:
+    linear-gradient(
+      to top,
+      var(--form-bg-active),
+      rgba(0, 0, 0, 0) 80%
+    ),
+    url("../../../public/images/background/Admin/brownleaves.jpg");
+}
+
+/*Sticky "WORKING" state (this is the magic) */
+.shop-admin-form:focus-within {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(0, 123, 255, 0.45);
+
+  background:
+    linear-gradient(
+      to top,
+      var(--form-bg-active),
+      rgba(0, 0, 0, 0) 80%
+    ),
+    url("../../../public/images/background/Admin/brownleaves.jpg");
+}
+
+.form-header1,
+.form-header2 {
+  color: #fff;
+  font-size: 50px;
+}
+
+.shop-admin-inputs {
+  width: 50%;
+  margin-bottom: 1.4rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  transition: all 0.4s ease-in-out;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.shop-admin-select {
+  width: 40%;
+  margin-bottom: 1rem;
+  padding: 0.6rem 1rem;
+  border: 2px solid #ccc;
+  border-radius: 30px;
+  font-size: 1.3rem;
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+  background-color: #fff;
+  color: #333;
+  appearance: none;
+  cursor: pointer;
+}
+
+.shop-admin-inputs:hover,
+.shop-admin-inputs:focus,
+.shop-admin-select:hover,
+.shop-admin-select:focus {
+  border-radius: 30px;
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0 0 15px 3px #007bff;
+}
+
+.shop-admin-select option {
+  color: #333;
+  background: #fff !important;
+}
+
+.shop-admin-select option:checked {
+  color: orange;
+  font-weight: 600;
+}
+
+.submit-button,
+.delete-button {
+  margin-top: 1rem;
+  padding: 0.8rem 1.8rem;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.3rem;
+  font-weight: 600;
+  transition: all 0.4s ease;
+}
+
+.submit-button {
+  background-color: #007bff;
+}
+
+.submit-button:hover {
+  background-color: #e48416;
+  box-shadow: 0 0 20px 5px rgba(245, 173, 41, 0.6);
+}
+
+.delete-button {
+  background-color: #e04848;
+}
+
+.delete-button:hover {
+  background-color: #da5543;
+  box-shadow: 0 0 20px 5px rgba(197, 61, 61, 0.6);
+}
+
+.submit-button:hover,
+.delete-button:hover {
+  font-size: 1.4rem;
+  font-weight: 800;
+  transform: scale(1.2);
+  border-radius: 40px;
+}
+
+.shop-admin-form img {
+  width: 40%;
+  height: auto;
+  margin-top: 1rem;
+  border-radius: 12px;
+  object-fit: contain;
+  border: 2px solid #fff;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* Responsive Widths */
+@media (min-width: 1028px) {
+  .shop-admin-form {
+    width: 70%;
+  }
+  .shop-admin-inputs {
+    width: 70%;
+  }
+  .shop-admin-select {
+    width: 40%;
+    background-color: rgb(206, 204, 201);
+  }
+  .shop-admin-select:hover {
+    background-color: rgb(245, 219, 181);
+    border-color: #e78746;
+    box-shadow: 0 0 15px 3px #e78746;
+  }
+}
+
+@media (min-width: 568px) and (max-width: 1027px) {
+  .shop-admin-form {
+    width: 80%;
+  }
+  .shop-admin-inputs {
+    width: 70%;
+  }
+  .shop-admin-select {
+    width: 50%;
+    background-color: rgb(206, 204, 201);
+  }
+  .shop-admin-select:hover {
+    background-color: rgb(245, 219, 181);
+    border-color: #e78746;
+    box-shadow: 0 0 15px 3px #e78746;
+  }
+}
+
+@media (max-width: 567px) {
+  .shop-admin-form {
+    width: 85%;
+  }
+  .shop-admin-inputs {
+    width: 80%;
+  }
+  .shop-admin-select {
+    width: 80%;
+    background-color: rgb(206, 204, 201);
+  }
+  .shop-admin-select:hover {
+    background-color: rgb(245, 219, 181);
+    border-color: #e78746;
+    box-shadow: 0 0 15px 3px #e78746;
+  }
+}

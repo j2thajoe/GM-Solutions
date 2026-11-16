@@ -1,0 +1,172 @@
+.printing-binding-container {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 0 30px 30px 0;
+}
+.printnbinding-form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40%;
+  height: auto;
+  border-radius: 30px;
+  padding: 2rem;
+  margin: 2rem auto;
+  z-index: 2;
+  position: relative;
+  overflow: hidden;
+
+  background-color: #f3e2e2;
+}
+
+.printnbinding-overlay-image {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 2000px; /* two-thirds of footer width */
+  height: 100%; /* half of footer height */
+  object-fit: cover;
+  object-position: bottom; /* keeps proportions */
+  opacity: 0.25; /* adjust opacity for subtle design */
+  pointer-events: none; /* prevents blocking links/buttons */
+  z-index: 1; /* stays behind content */
+
+  /* fade upwards from visible (bottom) to transparent (top 50%) */
+  mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 1) 50%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
+  mask-position: bottom;
+  -webkit-mask-position: bottom;
+  mask-size: 100% 100%;
+  -webkit-mask-size: 100% 100%;
+}
+.clickable-header {
+  cursor: pointer;
+  font-size: 2rem;
+  color: #0651a7;
+}
+.clickable-header:hover {
+  cursor: pointer;
+  font-size: 2.2rem;
+  color: #df752f;
+}
+.formats {
+  display: flex;
+  flex-direction: column;
+  background-color: #bfcfe2;
+  border-radius: 20px;
+  padding: 40px;
+}
+.formats-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px 10px 30px;
+}
+.format-labels {
+  font-size: 1.7rem;
+  text-align: left;
+}
+
+.checkbox {
+  width: 20px;
+  height: 20px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.printnbinding-btn {
+  display: inline-block;
+  background-color: #0631a8;
+  color: white;
+  padding: 20px 30px;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 50px;
+  box-shadow: 10px 10px 10px 10px;
+  transition: 0.3s ease-in-out;
+}
+
+.printnbinding-btn:hover {
+  background-color: #b96d16;
+}
+
+@media (min-width: 1024px) {
+  .printnbinding-form-container {
+    width: 80%;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  .printnbinding-form-container {
+    width: 70%;
+  }
+  .format-labels {
+    font-size: 1.5rem;
+    text-align: left;
+    font-style: bold;
+  }
+}
+
+@media (min-width: 568px) and (max-width: 768px) {
+  .printnbinding-form-container {
+    width: 80%;
+  }
+  .printing-styling-formats {
+    font-size: 2.7rem;
+  }
+}
+
+@media (max-width: 567px) {
+  .printing-binding-container {
+    padding: 10px;
+  }
+  .printnbinding-form-container {
+    width: 90%;
+    padding: 1rem;
+  }
+  .printnbinding-header {
+    font-size: 3rem;
+  }
+  .printing-styling-formats {
+    font-size: 2rem;
+  }
+  .formats {
+    padding: 20px;
+  }
+  .formats-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .format-labels {
+    font-size: 1rem;
+    text-align: center;
+  }
+  .clickable-header {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 398px) {
+  .printing-binding-container {
+    padding: 5px;
+  }
+}

@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Art Gallery",
+    "src": "/images/category/01.jpg",
+    "alt": "Art Gallery",
+    "link": "/artgallery"
+  },
+  {
+    "title": "Art Auctions",
+    "src": "/images/category/12.jpg",
+    "alt": "Art Auctions",
+    "link": "/artauction"
+  },
+  {
+    "title": "Art Information",
+    "src": "/images/category/06.jpg",
+    "alt": "Art Information",
+    "link": "/artinformation"
+  }
+]

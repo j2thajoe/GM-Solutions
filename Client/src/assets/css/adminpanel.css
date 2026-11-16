@@ -1,0 +1,59 @@
+.admin-panel-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: auto;
+  background: #f9fafb;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.admin-panel-title {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 1.6rem;
+  color: #333;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.admin-table th, .admin-table td {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.btn-toggle {
+  padding: 6px 10px;
+  margin-right: 6px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-delete {
+  padding: 6px 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.btn-toggle:hover {
+  background-color: #0056b3;
+}
+
+.btn-delete:hover {
+  background-color: #a71d2a;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+}
